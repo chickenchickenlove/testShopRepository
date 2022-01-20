@@ -1,13 +1,16 @@
 package myshop.shopproject.domain;
 
 import lombok.Getter;
+import org.springframework.util.StringUtils;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 @Entity
 @Getter
+
 public class Member {
 
     @Id
@@ -15,6 +18,7 @@ public class Member {
     @Column(name = "member_id")
     private Long id;
     private String name;
+    private String cellPhone;
 
     @Embedded
     private Address address;
@@ -33,12 +37,46 @@ public class Member {
 
 
 
-
     //== 연관관계 편의 메서드==//
 
 
 
     //== 생성 메서드==// + 연관관계 편의 메서드와 비슷한데, 생성자 로직이라고 보면 될 것 같다.
+
+    // 멤버 생성 메서드
+    public static Member createMember(String name, String city, String street, String zipCode) {
+
+        Member member = new Member();
+        member.name = name;
+
+        Address address = new Address();
+        address.setCity(city);
+        address.setStreet(street);
+        address.setZipcode(zipCode);
+
+        member.address = address;
+
+        return member;
+    }
+
+
+    public String transferCellPhone(String cellPhone) {
+
+        // '-'를 사용하지 않았을 때
+        if (!(cellPhone.contains("-"))){
+            return cellPhone;
+        }
+
+
+        String[] split = cellPhone.split("-");
+        String returnValue = "";
+        for (String s : split) {
+            returnValue += s;
+        }
+
+        return returnValue;
+    }
+
 
 
 }
