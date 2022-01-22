@@ -43,7 +43,27 @@ public class MemberService {
     }
 
 
+    public boolean isJoinable(String userId, String cellPhone) {
+        List<Member> memberById = memberRepository.findMemberById(userId);
+        List<Member> memberByCellPhone = memberRepository.findMemberByCellPhone(cellPhone);
+
+        int result = memberById.size() + memberByCellPhone.size();
+
+        if (result == 0) {
+            return true;
+        } else {
+            return false;
+        }
 
 
 
+
+
+    }
+
+
+    public List<Member> findMemberAll() {
+        return memberRepository.findMembers();
+
+    }
 }

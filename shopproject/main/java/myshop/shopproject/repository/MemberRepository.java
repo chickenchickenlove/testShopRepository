@@ -1,5 +1,7 @@
 package myshop.shopproject.repository;
 
+import com.querydsl.core.types.Predicate;
+import com.querydsl.core.types.dsl.BooleanExpression;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
 import myshop.shopproject.domain.Member;
@@ -67,9 +69,15 @@ public class MemberRepository {
         return queryFactory.selectFrom(QMember.member).where(QMember.member.name.eq(name)).fetchOne();
     }
 
+    // 회원 중복 조회
+
+
 
 
     //== 비즈니스 로직==//
+
+
+
 
     // 회원 가입 Validation
     protected void isPossibleSave(Member member) {
@@ -90,4 +98,13 @@ public class MemberRepository {
     }
 
 
+
+
+    private BooleanExpression getCellPhone(String cellPhone) {
+        return cellPhone == null ? null : member.cellPhone.eq(cellPhone);
+    }
+
+    private BooleanExpression getUserId(String userId) {
+        return userId == null ? null : member.userId.eq(userId);
+    }
 }
