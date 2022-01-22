@@ -4,7 +4,6 @@ import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
 import myshop.shopproject.domain.Member;
 import myshop.shopproject.domain.QMember;
-import org.jetbrains.annotations.NotNull;
 import org.springframework.stereotype.Repository;
 
 import javax.annotation.PostConstruct;
@@ -18,13 +17,13 @@ import static myshop.shopproject.domain.QMember.*;
 public class MemberRepository {
 
     private final EntityManager em;
-    private JPAQueryFactory queryFactory;
+    private final JPAQueryFactory queryFactory;
 
 
-    @PostConstruct
-    public void init() {
-        queryFactory = new JPAQueryFactory(em);
-    }
+//    @PostConstruct
+//    public void init() {
+//        queryFactory = new JPAQueryFactory(em);
+//    }
 
 
     //== 회원 저장 로직 ==//
