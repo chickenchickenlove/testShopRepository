@@ -19,10 +19,12 @@ public class Member {
     private Long id;
     private String name;
     private String cellPhone;
+    private String userId;
+    private String password;
 
+    //== 엔티티 영역 ==//
     @Embedded
     private Address address;
-
 
     @OneToMany(mappedBy = "member")
     private List<Order> orders = new ArrayList<>();
@@ -34,6 +36,19 @@ public class Member {
 
     //== 비즈니스 로직==//
 
+
+    public static String transCellPhone(String cellPhone) {
+        StringBuilder builder = new StringBuilder();
+
+        for (int index = 0; index < cellPhone.length(); index++) {
+            char nowString = cellPhone.charAt(index);
+            if (nowString != '-') {
+                builder.append(nowString);
+            }
+        }
+
+        return builder.toString();
+    }
 
 
 
@@ -47,35 +62,43 @@ public class Member {
     public static Member createMember(String name, String city, String street, String zipCode) {
 
         Member member = new Member();
-        member.name = name;
+
 
         Address address = new Address();
         address.setCity(city);
         address.setStreet(street);
         address.setZipcode(zipCode);
 
+
+        // 기본값 설정
+        member.name = name;
         member.address = address;
 
         return member;
     }
 
 
-    public String transferCellPhone(String cellPhone) {
+    public static Member createMember(String name, String city, String street, String zipCode, String userId, String password, String cellPhone) {
 
-        // '-'를 사용하지 않았을 때
-        if (!(cellPhone.contains("-"))){
-            return cellPhone;
-        }
+        Member member = new Member();
 
 
-        String[] split = cellPhone.split("-");
-        String returnValue = "";
-        for (String s : split) {
-            returnValue += s;
-        }
+        Address address = new Address();
+        address.setCity(city);
+        address.setStreet(street);
+        address.setZipcode(zipCode);
 
-        return returnValue;
+
+        // 기본값 설정
+        member.name = name;
+        member.address = address;
+        member.userId = userId;
+        member.password = password;
+        member.cellPhone = cellPhone;
+
+        return member;
     }
+
 
 
 

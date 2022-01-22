@@ -18,7 +18,7 @@ public class MemberTest {
         Member member = new Member();
 
         //when
-        String saveNumber = member.transferCellPhone(num);
+        String saveNumber = member.transCellPhone(num);
 
         //then
         Assertions.assertThat(saveNumber).isEqualTo("01012345678");
@@ -32,7 +32,7 @@ public class MemberTest {
         Member member = new Member();
 
         //when
-        String saveNumber = member.transferCellPhone(num);
+        String saveNumber = member.transCellPhone(num);
 
         //then
         Assertions.assertThat(saveNumber).isEqualTo("01012345678");
@@ -46,7 +46,7 @@ public class MemberTest {
         Member member = new Member();
 
         //when
-        String saveNumber = member.transferCellPhone(num);
+        String saveNumber = member.transCellPhone(num);
 
         //then
         Assertions.assertThat(saveNumber).isEqualTo("01012345678");
