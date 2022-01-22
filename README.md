@@ -31,4 +31,7 @@
 - Member 도메인 추가 개발(가입 ID, PassWord)
 - Member 도메인 휴대폰 전화번호 데이터 정규화 부분 리팩토링(시간복잡도 O(n)으로 개선)
 - MemberRepository 개발 : 회원 저장 시, Validation 추가(동일 ID, 동일 전화번호 가입 불가능) 
-- MmeberRepsitory 및 Member 테스트 코드 추가(추가 개발한 부분) 
+- MeberRepsitory 및 Member 테스트 코드 추가(추가 개발한 부분) 
+- ItemRepository, ItemServcie 개발 (아이템 저장, 아이템 조회)
+- OrderRepository, OrderService 개발 (주문 생성, 주문 조회, 주문 취소)
+- OrderRepository 테스트 코드 작성(주문 생성, 주문 생성 실패, 주문 취소, 주문 취소 실패)
