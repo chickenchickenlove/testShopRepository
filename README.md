@@ -28,10 +28,12 @@
 
 
 # 22.01.22
-- Member 도메인 추가 개발(가입 ID, PassWord)
-- Member 도메인 휴대폰 전화번호 데이터 정규화 부분 리팩토링(시간복잡도 O(n)으로 개선)
-- MemberRepository 개발 : 회원 저장 시, Validation 추가(동일 ID, 동일 전화번호 가입 불가능) 
-- MeberRepsitory 및 Member 테스트 코드 추가(추가 개발한 부분) 
-- ItemRepository, ItemServcie 개발 (아이템 저장, 아이템 조회)
-- OrderRepository, OrderService 개발 (주문 생성, 주문 조회, 주문 취소)
-- OrderRepository 테스트 코드 작성(주문 생성, 주문 생성 실패, 주문 취소, 주문 취소 실패)
+- Member 도메인 비즈니스 로직 개발 : 휴대폰 전화번호 데이터 정규화하여 저장하기.
+- Member 도메인 비즈니스 테스트 코드 추가 : 휴대폰 전화번호 데이터 정규화하여 저장하기.
+- MemberRepository 개발 : 회원 단 건 조회, 회원 전체 조회, 회원 이름으로 검색하기
+- MemberRepository 개발 : 회원 저장 시, 중복 이름 가진 사람 걸러내는 로직 추가.
+- MemberRepository 테스트 코드 작성
+- MemberService 개발 : 회원 저장, 회원 단 건 조회, 회원 전체 조회, 회원 이름으로 검색하기
+- HomeController 개발 ★★★★ HomeController 추후에 HTML 변경 시, 재구성 필요함. 
+- MemberController 개발 : 회원 저장, 회원 리스트 조회 접속
+- MemberControoler 내부 Validation 로직 개발 
