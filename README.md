@@ -25,3 +25,10 @@
 - MemberRepository 개발 : 회원 저장 시, 중복 이름 가진 사람 걸러내는 로직 추가.
 - MemberRepository 테스트 코드 작성
 - MemberService 개발 : 회원 저장, 회원 단 건 조회, 회원 전체 조회, 회원 이름으로 검색하기
+
+
+# 22.01.22
+- Member 도메인 추가 개발(가입 ID, PassWord)
+- Member 도메인 휴대폰 전화번호 데이터 정규화 부분 리팩토링(시간복잡도 O(n)으로 개선)
+- MemberRepository 개발 : 회원 저장 시, Validation 추가(동일 ID, 동일 전화번호 가입 불가능) 
+- MmeberRepsitory 및 Member 테스트 코드 추가(추가 개발한 부분) 
