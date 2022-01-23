@@ -37,3 +37,5 @@
 - HomeController 개발 ★★★★ HomeController 추후에 HTML 변경 시, 재구성 필요함. 
 - MemberController 개발 : 회원 저장, 회원 리스트 조회 접속
 - MemberControoler 내부 Validation 로직 개발 
+
+# 22.01.23
