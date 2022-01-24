@@ -39,3 +39,7 @@
 - MemberControoler 내부 Validation 로직 개발 
 
 # 22.01.23
+- ItemController 개발(상품 등록, 상품 목록 조회, 상품 수정 기능 구현)
+- ItemController의 Validation 기능 구현(ItemForm 객체 분리 이후 필요한 값들의 개별 Validation 설정
+- OrderController의 개발(주문 등록, 주문 조회, 주문 취소 기능 구현)
+- 주문 등록 시, Validation 기능 개발 중(아무런 값이 들어왔을 때, 주문 처리되지 않는 기능 구현 중) 
