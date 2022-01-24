@@ -2,6 +2,7 @@ package myshop.shopproject.controller;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import myshop.shopproject.controller.form.MemberForm;
 import myshop.shopproject.domain.Member;
 import myshop.shopproject.service.MemberService;
 import org.springframework.stereotype.Controller;
@@ -33,8 +34,7 @@ public class MemberController {
     }
 
     @PostMapping("/members/new")
-    public String memberSave(@Valid @ModelAttribute(name = "memberForm") MemberForm memberForm,
-                             BindingResult bindingResult) {
+    public String memberSave(@Valid @ModelAttribute MemberForm memberForm, BindingResult bindingResult) {
 
         // 검증 로직
         checkValidation(memberForm, bindingResult);

@@ -2,10 +2,7 @@ package myshop.shopproject.service;
 
 
 import lombok.RequiredArgsConstructor;
-import myshop.shopproject.domain.Delivery;
-import myshop.shopproject.domain.Member;
-import myshop.shopproject.domain.Order;
-import myshop.shopproject.domain.OrderItem;
+import myshop.shopproject.domain.*;
 import myshop.shopproject.domain.item.Item;
 import myshop.shopproject.repository.ItemRepository;
 import myshop.shopproject.repository.MemberRepository;
@@ -43,6 +40,7 @@ public class OrderService {
 
         Delivery delivery = new Delivery();
         delivery.setAddress(member.getAddress());
+        delivery.setStatus(DeliveryStatus.READY);
 
         Order order = Order.createdOrder(member, delivery, orderItem);
 
@@ -53,8 +51,10 @@ public class OrderService {
 
     // 주문 취소
     @Transactional
-    public void orderCancel(Order order) {
+    public void orderCancel(Long orderId) {
         // 주문 취소 + 더티 체킹으로 업데이트
+
+        Order order = orderRepository.findOrderByOrderId(orderId);
         order.cancel();
     }
 

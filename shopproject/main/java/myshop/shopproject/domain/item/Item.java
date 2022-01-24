@@ -22,6 +22,17 @@ public abstract class Item {
     private int price;
     private int stockQuantity;
 
+    public static Item createItem(String name, int stockQuantity, int price, String author, String isbn) {
+
+        Book book = new Book();
+        book.setName(name);
+        book.setStockQuantity(stockQuantity);
+        book.setPrice(price);
+        book.setAuthor(author);
+        book.setIsbn(isbn);
+
+        return book;
+    }
 
 
     //== 비즈니스 로직 ==//

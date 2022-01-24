@@ -4,9 +4,13 @@ package myshop.shopproject.repository;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import lombok.RequiredArgsConstructor;
 import myshop.shopproject.domain.item.Item;
+import myshop.shopproject.domain.item.QItem;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
+import java.util.List;
+
+import static myshop.shopproject.domain.item.QItem.*;
 
 @Repository
 @RequiredArgsConstructor
@@ -34,6 +38,11 @@ public class ItemRepository {
     }
 
 
+    public List<Item> findItemAll() {
+        return queryFactory.selectFrom(item).fetch();
 
 
+
+
+    }
 }

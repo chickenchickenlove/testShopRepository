@@ -2,11 +2,16 @@ package myshop.shopproject.service;
 
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import myshop.shopproject.domain.item.Book;
 import myshop.shopproject.domain.item.Item;
 import myshop.shopproject.repository.ItemRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
+@Slf4j
 @Service
 @Transactional
 @RequiredArgsConstructor
@@ -26,4 +31,12 @@ public class ItemService {
         return itemRepository.findItem(itemId);
     }
 
+    public List<Item> findItemAll() {
+        return itemRepository.findItemAll();
+    }
+
+    public void updateItem(Book item) {
+        log.info("DIRTY CHECKING");
+
+    }
 }
